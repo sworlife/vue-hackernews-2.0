@@ -1,12 +1,12 @@
-// app/extend/context.js
+'use strict';
 
 module.exports = {
   createRender() {
-    const { env } = this.app.config
-    if (env === 'local') {
-      return this.app.createServerRenderer()
-    } else {
-      return this.app.createClientRenderer()
+    const { env } = this.app.config;
+
+    if (env === 'production') {
+      return this.app.createServerRenderer();
     }
+    return this.app.createClientRenderer();
   },
 };

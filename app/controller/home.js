@@ -5,21 +5,15 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.createRender().then(renderer => {
-      const context = {
-        title: 'Vue HN 2.0', // default title
-        url: ctx.request.url,
-      };
-      console.log(ctx.request.url)
-      renderer.renderToString(context, (err, html) => {
-        if (err) {
-          console.log(err, html);
-
-          ctx.body = html;
-          return;
-        }
-        ctx.body = html;
-      });
+    const context = {
+      title: 'Vue HN 2.0', // default title
+      url: ctx.request.url,
+    };
+    ctx.render(context).then(html => {
+      console.log(html, 'home.js html', ctx.request.url);
+      ctx.body = html;
+    }, err => {
+      console.log(err, 'home.js err');
     });
   }
 }

@@ -1,9 +1,10 @@
 'use strict';
 
-/** @type Egg.EggPlugin */
+const path = require('path');
+
 module.exports = {
-  // had enabled by egg
-  // static: {
-  //   enable: true,
-  // }
+  'vue-dev': {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/egg-vue-dev'),
+  },
 };

@@ -25,11 +25,10 @@ module.exports = appInfo => {
     static: {
       prefix: '/public/',
       dir: [
-        path.join(appInfo.baseDir, 'app/web/dist'), 
+        path.join(appInfo.baseDir, 'app/web/dist'),
         path.join(appInfo.baseDir, 'app/web/public'),
-        // path.join(appInfo.baseDir, 'manifest.json')
-      ] // 多静态文件入口
-    }
+      ], // 多静态文件入口
+    },
   };
 
   return {
