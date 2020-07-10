@@ -3,8 +3,8 @@
 const path = require('path');
 
 module.exports = {
-  'vue-dev': {
+  vue: {
     enable: true,
-    path: path.join(__dirname, '../lib/plugin/egg-vue-dev'),
+    path: path.join(__dirname, '../lib/plugin/egg-view-vue'),
   },
 };
