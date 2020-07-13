@@ -23,11 +23,24 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     static: {
-      prefix: '/public/',
-      dir: [
-        path.join(appInfo.baseDir, 'app/web/dist'),
-        path.join(appInfo.baseDir, 'app/web/public'),
+      // prefix: '/public/',
+      dirs: [
+        { prefix: '/dist/', dir: path.join(appInfo.baseDir, 'app/dist') },
+        { prefix: '/public/', dir: path.join(appInfo.baseDir, 'app/public') },
+        { prefix: '/manifest.json', dir: path.join(appInfo.baseDir, 'manifest.json') },
+        { prefix: '/service-worker.js', dir: path.join(appInfo.baseDir, 'app/dist/service-worker.js') },
       ], // 多静态文件入口
+      // dir: path.join(appInfo.baseDir, 'app/dist'),
+    },
+    vue: {
+      cache: true,
+      // renderOptions: {
+      //   template: `<!DOCTYPE html><html lang="en"><body><!--vue-ssr-outlet--></body></html>`,
+      //   ......
+      // },
+    },
+    view: {
+      defaultViewEngine: 'vue',
     },
   };
 

@@ -11,7 +11,7 @@ class HomeController extends Controller {
         <meta name="keywords" content="西南钢铁指数">
       `,
     };
-    await ctx.render('aa.js', context);
+    await ctx.render('start.js', context);
   }
 }
 
