@@ -10,7 +10,7 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',
-  entry: path.resolve(process.cwd(), 'app/web/src/entry-server.js'),
+  entry: path.resolve(process.cwd(), 'web/src/entry-server.js'),
   output: {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2',
